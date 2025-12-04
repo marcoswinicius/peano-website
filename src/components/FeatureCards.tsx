@@ -1,5 +1,8 @@
 import { DollarSign, FileText, TrendingUp, Smartphone } from "lucide-react";
 import Img from "../imports/Img";
+import artboard1 from "../assets/artboard1.png";
+import artboard2 from "../assets/artboard2.png";
+import artboard3 from "../assets/artboard3.png";
 import { motion } from "framer-motion";
 
 export function FeatureCards() {
@@ -50,14 +53,9 @@ export function FeatureCards() {
             viewport={{ once: true, amount: 0.3 }}
           >
           {/* Card 1 */}
-          <motion.div className="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10" variants={item}>
-            <div className="h-64 bg-gray-300 flex items-center justify-center text-gray-500">
-              <div className="text-center">849 × 645</div>
-            </div>
+          <motion.div className="card-bg-gradient backdrop-blur-sm rounded-lg overflow-hidden border border-white/10" variants={item}>
+            <div className="h-64 card-bg-1" />
             <div className="p-6">
-              <div className="w-12 h-12 bg-[#2FB8F7] rounded-lg flex items-center justify-center mb-4">
-                <DollarSign className="h-6 w-6 text-white" />
-              </div>
               <h3 className="text-xl mb-3 text-white">Controle antes do gasto acontecer</h3>
               <p className="text-gray-200">
                 Defina limites por centro de custo, categoria, equipe ou funcionário. Evite gastos fora da política da empresa e mantenha o orçamento sob controle em tempo real.
@@ -66,14 +64,9 @@ export function FeatureCards() {
           </motion.div>
 
           {/* Card 2 */}
-          <motion.div className="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10" variants={item}>
-            <div className="h-64 bg-gray-300 flex items-center justify-center text-gray-500">
-              <div className="text-center">849 × 645</div>
-            </div>
+          <motion.div className="card-bg-gradient backdrop-blur-sm rounded-lg overflow-hidden border border-white/10" variants={item}>
+            <div className="h-64 card-bg-2" />
             <div className="p-6">
-              <div className="w-12 h-12 bg-[#2FB8F7] rounded-lg flex items-center justify-center mb-4">
-                <FileText className="h-6 w-6 text-white" />
-              </div>
               <h3 className="text-xl mb-3 text-white">Adeus planilhas e relatórios manuais</h3>
               <p className="text-gray-200">
                 Centralize suas despesas e automatize conciliações. O sistema identifica, categoriza e organiza cada gasto, sem papelada e sem retrabalho.
@@ -82,14 +75,9 @@ export function FeatureCards() {
           </motion.div>
 
           {/* Card 3 */}
-          <motion.div className="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10" variants={item}>
-            <div className="h-64 bg-gray-300 flex items-center justify-center text-gray-500">
-              <div className="text-center">849 × 645</div>
-            </div>
+          <motion.div className="card-bg-gradient backdrop-blur-sm rounded-lg overflow-hidden border border-white/10" variants={item}>
+            <div className="h-64 card-bg-3" />
             <div className="p-6">
-              <div className="w-12 h-12 bg-[#2FB8F7] rounded-lg flex items-center justify-center mb-4">
-                <TrendingUp className="h-6 w-6 text-white" />
-              </div>
               <h3 className="text-xl mb-3 text-white">Gestão inteligente e economia real</h3>
               <p className="text-gray-200">
                 Acompanhe os gastos corporativos com dashboards dinâmicos e relatórios automáticos. Identifique oportunidades de redução de custos e melhore a performance financeira da sua empresa.
@@ -140,8 +128,8 @@ export function FeatureCards() {
                   </a>
                 </motion.div>
               </motion.div>
-              <motion.div className="lg:h-auto h-96 relative flex items-center justify-center overflow-visible" variants={item} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
-                <div className="w-full max-w-[690px] aspect-square scale-75 lg:scale-90">
+              <motion.div className="h-96 relative flex items-center justify-center overflow-visible" variants={item} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
+                <div className="w-full max-w-[690px] aspect-square scale-75 lg:scale-90 card-bg-cell">
                   <Img />
                 </div>
               </motion.div>

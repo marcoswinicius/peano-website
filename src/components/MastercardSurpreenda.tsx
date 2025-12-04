@@ -52,7 +52,7 @@ export function MastercardSurpreenda() {
             </motion.div>
             
             <motion.h2 className="text-4xl lg:text-5xl mb-6 text-[#44216a]" variants={item}>
-              Peano Corporate + Mastercard Surpreenda
+              Peano Corp + Mastercard Surpreenda
             </motion.h2>
             
             <motion.p className="text-xl text-gray-600 mb-6" variants={item}>

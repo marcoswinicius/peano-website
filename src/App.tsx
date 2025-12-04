@@ -1,5 +1,6 @@
 import { Hero } from "./components/Hero";
 import { FeatureCards } from "./components/FeatureCards";
+import LeadChat from "./components/LeadChat";
 import { CardTypes } from "./components/CardTypes";
 import { Features } from "./components/Features";
 import { HowItWorks } from "./components/HowItWorks";
@@ -39,6 +40,7 @@ export default function App() {
       <FAQ />
       <CTA />
       <Footer />
+      <LeadChat />
     </div>
   );
 }

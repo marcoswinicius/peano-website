@@ -18,7 +18,7 @@ const plans = [
   },
   {
     name: "Black",
-    price: "64",
+    price: "54",
     description: "Para empresas que querem mais",
     features: [
       "Tudo do Standard, mais:",

@@ -9,8 +9,8 @@ function SvgComponent(props: PeanoLogoProps) {
   const { fill = "#44216A", ...svgProps } = props;
   return (
     <svg
-      width={182}
-      height={43.3}
+      width={182*1.3}
+      height={43.3*1.3}
       viewBox="0 0 273 65"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

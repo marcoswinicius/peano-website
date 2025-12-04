@@ -30,7 +30,7 @@ export function Hero() {
       <div className="relative max-w-7xl mx-auto px-6 py-20 lg:py-32">
         {/* Logo */}
         <motion.div
-          className="w-32 mb-12"
+          className="mb-12"
           initial={{ opacity: 0, y: 10, filter: "blur(6px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -53,7 +53,7 @@ export function Hero() {
               initial="hidden"
               animate="show"
             >
-              Simplifique o controle financeiro da sua empresa com o Peano Corporate
+              Simplifique o controle financeiro da sua empresa com o Peano Corp
             </motion.h1>
             <motion.p className="text-xl text-gray-200" variants={item}>
               O cartão corporativo que une tecnologia, gestão e autonomia. Controle gastos em tempo real, defina limites inteligentes e otimize sua operação com a mesma segurança de uma infraestrutura bancária.

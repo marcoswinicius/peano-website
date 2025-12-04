@@ -7,15 +7,15 @@ import {
 
 const faqs = [
   {
-    question: "O que é o Peano Corporate?",
-    answer: "O Peano Corporate é um cartão corporativo gratuito para simplificar seus gastos corporativos. Ele foi criado para empresas que buscam mais controle financeiro, gestão de despesas inteligente e tecnologia de ponta. Tudo em uma única plataforma."
+    question: "O que é o Peano Corp?",
+    answer: "O Peano Corp é um cartão corporativo gratuito para simplificar seus gastos corporativos. Ele foi criado para empresas que buscam mais controle financeiro, gestão de despesas inteligente e tecnologia de ponta. Tudo em uma única plataforma."
   },
   {
-    question: "Quais são os principais benefícios do Peano Corporate?",
+    question: "Quais são os principais benefícios do Peano Corp?",
     answer: "Sem anuidade e sem taxa de emissão. Controle de gastos em tempo real via aplicativo. Emissão instantânea de cartões físicos e virtuais. Limites configuráveis por colaborador, centro de custo ou categoria. Dashboard completo para análise e relatórios de despesas."
   },
   {
-    question: "Como solicitar o Peano Corporate?",
+    question: "Como solicitar o Peano Corp?",
     answer: "O processo é 100% digital. Basta preencher o formulário no site e aguardar o contato do nosso time. Após a aprovação, você poderá emitir cartões e começar a usar imediatamente."
   },
   {
@@ -23,15 +23,15 @@ const faqs = [
     answer: "Despesas operacionais, assinaturas de software, viagens corporativas, compras de suprimentos e pagamentos de fornecedores. Tudo o que faz parte da rotina do seu negócio."
   },
   {
-    question: "O Peano Corporate possui anuidade ou custos escondidos?",
-    answer: "Não. O Peano Corporate é totalmente gratuito — sem anuidade, sem mensalidade e sem taxa de emissão para o cartão virtual."
+    question: "O Peano Corp possui anuidade ou custos escondidos?",
+    answer: "Não. O Peano Corp é totalmente gratuito — sem anuidade, sem mensalidade e sem taxa de emissão para o cartão virtual."
   },
   {
-    question: "Como gerenciar os gastos realizados com o Peano Corporate?",
+    question: "Como gerenciar os gastos realizados com o Peano Corp?",
     answer: "Todos os gastos ficam disponíveis em tempo real no painel de controle. Você pode categorizar despesas, definir limites por equipe e gerar relatórios automáticos, sem precisar de planilhas manuais."
   },
   {
-    question: "É possível integrar o Peano Corporate com outros sistemas de gestão?",
+    question: "É possível integrar o Peano Corp com outros sistemas de gestão?",
     answer: "Sim. A plataforma Peano permite integrações com ERPs, CRMs e sistemas financeiros, automatizando o fluxo de dados e conciliando despesas de forma inteligente."
   },
   {
@@ -49,7 +49,7 @@ export function FAQ() {
             Perguntas Frequentes
           </h2>
           <p className="text-xl text-gray-600">
-            Tire suas dúvidas sobre o Peano Corporate
+            Tire suas dúvidas sobre o Peano Corp
           </p>
         </div>
 
