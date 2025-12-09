@@ -1,24 +1,12 @@
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
+import whiteCardImg from "../assets/white-card.png";
+import blackCardImg from "../assets/black-card.png";
 
 const cards = [
   {
-    name: "Peano Blue",
-    color: "from-[#2FB8F7] to-[#6858F9]",
-    chipColor: "bg-white/20",
-    features: [
-      "Cartão virtual para compras online e assinaturas de softwares.",
-      "Criação instantânea via plataforma Peano.",
-      "Limites configuráveis por transação.",
-      "Ideal para marketing digital e ferramentas SaaS.",
-      "Bloqueio e desbloqueio em tempo real."
-    ]
-  },
-  {
     name: "Peano White",
-    color: "from-gray-100 to-white",
-    chipColor: "bg-gray-400/30",
-    textDark: true,
+    image: whiteCardImg,
     features: [
       "Cartão ideal para compras do dia a dia e despesas operacionais.",
       "Zero anuidade para sempre.",
@@ -29,8 +17,7 @@ const cards = [
   },
   {
     name: "Peano Black",
-    color: "from-[#44216a] to-[#5f5275]",
-    chipColor: "bg-white/20",
+    image: blackCardImg,
     features: [
       "Cartão premium para executivos com benefícios exclusivos e limites elevados.",
       "Cashback de até 2% em todas as compras corporativas.",
@@ -61,7 +48,7 @@ export function CardTypes() {
         </motion.div>
 
         <motion.div 
-          className="grid md:grid-cols-3 gap-8"
+          className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"
           variants={{
             hidden: { opacity: 0 },
             visible: {
@@ -76,74 +63,24 @@ export function CardTypes() {
           {cards.map((card, index) => (
             <motion.div
               key={index}
-              className="group bg-white rounded-3xl p-8 border border-gray-200/50 shadow-xl transition-all duration-500"
+              className="group bg-white rounded-2xl bg-red-500 p-8 border border-gray-200/50 shadow-xl transition-all duration-500"
               variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
               whileHover={{ y: -12 }}
             >
-              {/* Card mockup */}
+              {/* Card image */}
               <motion.div 
-                className={`w-full aspect-[1.586] bg-gradient-to-br ${card.color} rounded-2xl p-6 mb-8 shadow-2xl relative overflow-hidden`}
+                className="w-full aspect-[1.586] rounded-2xl mb-8 shadow-2xl overflow-hidden"
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
                 whileHover={{ scale: 1.03 }}
               >
-                {/* Subtle gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-black/5 to-transparent"></div>
-                
-                {/* Decorative circles */}
-                <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-white/10 blur-2xl"></div>
-                <div className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full bg-black/10 blur-2xl"></div>
-                
-                {/* Logo */}
-                <div className={`relative text-sm font-semibold mb-10 ${card.textDark ? 'text-gray-700' : 'text-white/95'}`}>
-                  <div className="flex items-center gap-2">
-                    <div className="flex gap-0.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-current"></div>
-                      <div className="w-1.5 h-1.5 rounded-full bg-current"></div>
-                      <div className="w-1.5 h-1.5 rounded-full bg-current"></div>
-                    </div>
-                    <span className="tracking-wider">PEANO</span>
-                  </div>
-                </div>
-
-                {/* Chip with realistic design */}
-                <div className={`relative w-14 h-11 ${card.chipColor} rounded-lg mb-10 overflow-hidden`}>
-                  <div className="absolute inset-1 grid grid-cols-3 gap-0.5 p-1">
-                    {[...Array(9)].map((_, i) => (
-                      <div key={i} className={`rounded-sm ${card.textDark ? 'bg-gray-600/40' : 'bg-white/30'}`}></div>
-                    ))}
-                  </div>
-                  <div className={`absolute inset-0 border ${card.textDark ? 'border-gray-600/20' : 'border-white/20'} rounded-lg`}></div>
-                </div>
-
-                {/* Decorative wave pattern */}
-                <div className="absolute right-0 bottom-0 w-48 h-48 opacity-10 pointer-events-none">
-                  <svg viewBox="0 0 200 200" className={card.textDark ? 'text-gray-400' : 'text-white'}>
-                    <path fill="currentColor" d="M0,100 Q50,80 100,100 T200,100 L200,200 L0,200 Z" />
-                  </svg>
-                </div>
-
-                {/* Card number */}
-                <div className={`relative text-lg font-mono tracking-[0.3em] ${card.textDark ? 'text-gray-700' : 'text-white/95'} mb-4`}>
-                  •••• •••• •••• 8742
-                </div>
-
-                {/* Cardholder info */}
-                <div className={`relative flex justify-between items-end ${card.textDark ? 'text-gray-700' : 'text-white/90'}`}>
-                  <div>
-                    <div className="text-xs opacity-70 mb-1">Titular</div>
-                    <div className="text-sm font-medium">NOME EMPRESA</div>
-                  </div>
-                  <div className="text-xs opacity-70">12/28</div>
-                </div>
-
-                {/* Mastercard logo - improved */}
-                <div className="absolute bottom-6 right-6 flex items-center gap-0">
-                  <div className="w-9 h-9 rounded-full bg-[#EB001B] shadow-lg"></div>
-                  <div className="w-9 h-9 rounded-full bg-[#F79E1B] shadow-lg -ml-4"></div>
-                </div>
+                <img 
+                  src={card.image} 
+                  alt={card.name}
+                  className="w-full h-full object-cover"
+                />
               </motion.div>
 
               {/* Card info */}

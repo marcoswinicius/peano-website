@@ -2,6 +2,7 @@ import PeanoLogo from "../imports/PeanoLogo";
 import { Button } from "./ui/button";
 import { ArrowRight, CreditCard } from "lucide-react";
 import { motion } from "framer-motion";
+import Img from "../imports/Img";
 
 export function Hero() {
   const container = {
@@ -83,45 +84,22 @@ export function Hero() {
           </motion.div>
 
           {/* Right content - Card mockup */}
-          <motion.div className="relative lg:pl-12" variants={rightCard} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.4 }}>
+          <motion.div className="relative lg:pl-12" initial="hidden" variants={rightCard} whileInView="show" viewport={{ once: true, amount: 0.4 }}>
+            <Img />
             <div className="relative">
-              {/* Floating cards */}
               <motion.div
-                className="absolute -top-8 -right-8 w-80 h-48 bg-gradient-to-br from-[#6858F9] to-[#2FB8F7] rounded-2xl shadow-2xl rotate-6 opacity-80"
-                initial={{ y: -20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 0.8 }}
-                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-                viewport={{ once: true }}
-              />
-              <motion.div
-                className="relative w-80 h-48 bg-gradient-to-br from-[#2FB8F7] to-[#6858F9] rounded-2xl shadow-2xl p-6 flex flex-col justify-between"
                 initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
                 whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                 viewport={{ once: true }}
               >
-                <div className="flex justify-between items-start">
-                  <div>
-                    <CreditCard className="h-10 w-10 text-white/90" />
-                  </div>
-                  <div className="text-right">
-                    <div className="text-xs text-white/80 mb-1">Mastercard</div>
-                    <div className="flex gap-1">
-                      <div className="w-6 h-6 rounded-full bg-red-500 opacity-80" />
-                      <div className="w-6 h-6 rounded-full bg-yellow-500 opacity-80 -ml-2" />
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div className="text-lg tracking-wider mb-2">•••• •••• •••• 8742</div>
-                  <div className="flex justify-between items-end">
-                    <div>
-                      <div className="text-xs text-white/70">Titular</div>
-                      <div className="text-sm">João Silva</div>
-                    </div>
-                    <div className="text-xs text-white/70">PEANO</div>
-                  </div>
-                </div>
+                <video
+                  autoPlay
+                  muted
+                  playsInline
+                  className="w-full filter drop-shadow-2xl"
+                  src="/src/assets/credit-card-animation.webm"
+                />
               </motion.div>
             </div>
           </motion.div>

@@ -16,7 +16,7 @@ export default function App() {
     <div className="min-h-screen bg-white">
       {/* Shared gradient background for Hero + FeatureCards to ensure seamless continuity */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#44216a] via-[#5f5275] to-[#44216a]" />
+        <div className="absolute inset-0 bg-red-500 bg-gradient-to-br from-[#44216a] via-[#5f5275] to-[#44216a]" />
         <div className="absolute inset-0 opacity-10">
           <div
             className="absolute inset-0"
