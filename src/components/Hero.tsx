@@ -98,7 +98,7 @@ export function Hero() {
                   muted
                   playsInline
                   className="w-full filter drop-shadow-2xl"
-                  src="/src/assets/credit-card-animation.webm"
+                  src="/credit-card-animation.webm"
                 />
               </motion.div>
             </div>
