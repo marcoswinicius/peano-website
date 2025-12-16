@@ -61,18 +61,21 @@ export default function LeadChat() {
   };
 
   const submitLeadToResend = async (data: { name: string; email: string; phone: string }) => {
-    console.log("Preparing to send to Resend:", data);
-    // Aqui você implementaria a chamada para sua API que conecta com o Resend
-    // Exemplo:
-    // await fetch('/api/send-email', {
-    //   method: 'POST',
-    //   body: JSON.stringify({
-    //     from: 'onboarding@resend.dev',
-    //     to: 'contato@peano.com.br',
-    //     subject: 'Novo Lead via Chat',
-    //     html: `<p>Nome: ${data.name}</p><p>Email: ${data.email}</p><p>Telefone: ${data.phone}</p>`
-    //   })
-    // });
+    console.log("Sending to /api/contact:", data);
+    try {
+      const resp = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const result = await resp.json();
+      if (!resp.ok || !result?.ok) {
+        throw new Error(result?.error || "Falha ao enviar");
+      }
+      console.log("Lead enviado com sucesso:", result.id);
+    } catch (err: any) {
+      console.error("Erro ao enviar lead:", err?.message || String(err));
+    }
   };
 
   const handleSendMessage = (e: React.FormEvent) => {
@@ -158,8 +161,8 @@ export default function LeadChat() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.3 }}
-            className="lead-chat-panel rounded-2xl overflow-hidden flex flex-col"
-            style={{ width: 340, height: 500, backgroundColor: peanoDark, filter: "drop-shadow(0 10px 20px rgba(0,0,0,0.25))" }}
+            className="lead-chat-panel-mobile rounded-2xl overflow-hidden flex flex-col"
+            style={{ backgroundColor: peanoDark, filter: "drop-shadow(0 10px 20px rgba(0,0,0,0.25))" }}
           >
             <div className="lead-chat-header px-4 py-3 text-white flex items-center justify-between shrink-0">
               <motion.div
@@ -191,7 +194,7 @@ export default function LeadChat() {
             </div>
 
             {/* Messages area */}
-            <div className="lead-chat-messages p-6 text-white space-y-4">
+            <div className="lead-chat-messages-mobile flex-1 p-6 text-white space-y-4 overflow-y-auto">
               <AnimatePresence mode="popLayout">
                 {messages.map((msg) => (
                   <motion.div

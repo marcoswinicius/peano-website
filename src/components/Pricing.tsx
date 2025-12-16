@@ -77,6 +77,7 @@ export function Pricing() {
               </div>
 
               <Button
+                asChild
                 className={`w-full mb-8 ${
                   plan.highlighted
                     ? 'bg-white text-[#44216a] hover:bg-gray-100'
@@ -84,7 +85,7 @@ export function Pricing() {
                 }`}
                 size="lg"
               >
-                Começar agora
+                <a href="#/contato">Começar agora</a>
               </Button>
 
               <ul className="space-y-4">
@@ -107,7 +108,7 @@ export function Pricing() {
 
         <div className="text-center mt-12">
           <p className="text-gray-600">
-            Precisa de um plano customizado para sua empresa? <a href="#" className="text-[#44216a] hover:underline">Fale com nosso time</a>
+            Precisa de um plano customizado para sua empresa? <a href="#/contato" className="text-[#44216a] hover:underline">Fale com nosso time</a>
           </p>
         </div>
       </div>

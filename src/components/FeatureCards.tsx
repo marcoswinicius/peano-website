@@ -1,7 +1,4 @@
-import { DollarSign, FileText, TrendingUp, Smartphone } from "lucide-react";
-import artboard1 from "../assets/artboard1.png";
-import artboard2 from "../assets/artboard2.png";
-import artboard3 from "../assets/artboard3.png";
+import { Smartphone } from "lucide-react";
 import symbolPeano from "../assets/peano.png";
 import { motion } from "framer-motion";
 
@@ -130,7 +127,7 @@ export function FeatureCards() {
               </motion.div>
               <motion.div className="h-96 relative flex items-end justify-center overflow-visible" variants={item} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
                 <div className="w-full h-full card-bg-cellphone scale-125 translate-y-[35%] absolute top-8" />
-                <div className="absolute top-10 left-8 z-10">
+                <div className="absolute top-12 left-8 z-10">
                   <motion.div className="card-floating-symbol" variants={item} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
                     <img src={symbolPeano} alt="Peano Symbol" />
                   </motion.div>

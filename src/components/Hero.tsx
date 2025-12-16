@@ -1,34 +1,54 @@
 import PeanoLogo from "../imports/PeanoLogo";
 import { Button } from "./ui/button";
-import { ArrowRight, CreditCard } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Img from "../imports/Img";
+import { CreditCard } from "./CreditCard";
 
 export function Hero() {
   const container = {
     hidden: { opacity: 0 },
-    show: { opacity: 1, transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.12, delayChildren: 0.1 },
+    },
   } as const;
-
+CreditCard
   const item = {
     hidden: { opacity: 0, y: 12, filter: "blur(8px)" },
-    show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+    show: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+    },
   } as const;
 
   const rightCard = {
     hidden: { opacity: 0, y: 20, scale: 0.98, filter: "blur(6px)" },
-    show: { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.2 } },
+    show: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      filter: "blur(0px)",
+      transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.2 },
+    },
   } as const;
 
   // Title: robust blur + fade-in (no clip-path to avoid visibility issues)
   const titleVariant = {
     hidden: { opacity: 0, y: 8, filter: "blur(10px)" },
-    show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
+    show: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+    },
   } as const;
 
   return (
-    <section className="relative text-white overflow-hidden bg-transparent">
-      <div className="relative max-w-7xl mx-auto px-6 py-20 lg:py-32">
+    <section className="relative text-white overflow-hidden">
+      <div className="relative max-w-7xl mx-auto px-6 py-6 lg:py-32">
         {/* Logo */}
         <motion.div
           className="mb-12"
@@ -49,26 +69,44 @@ export function Hero() {
             viewport={{ once: true, amount: 0.5 }}
           >
             <motion.h1
-              className="text-5xl lg:text-6xl tracking-tight"
+              className="text-4xl md:text-5xl lg:text-6xl tracking-tight"
               variants={titleVariant}
               initial="hidden"
               animate="show"
             >
               Simplifique o controle financeiro da sua empresa com o Peano Corp
             </motion.h1>
-            <motion.p className="text-xl text-gray-200" variants={item}>
-              O cartão corporativo que une tecnologia, gestão e autonomia. Controle gastos em tempo real, defina limites inteligentes e otimize sua operação com a mesma segurança de uma infraestrutura bancária.
+            <motion.p
+              className="text-md md:text-xl text-gray-200"
+              variants={item}
+            >
+              O cartão corporativo que une tecnologia, gestão e autonomia.
+              Controle gastos em tempo real, defina limites inteligentes e
+              otimize sua operação com a mesma segurança de uma infraestrutura
+              bancária.
             </motion.p>
 
-            <motion.div className="flex flex-col sm:flex-row gap-4" variants={item}>
-              <Button size="lg" className="bg-[#2FB8F7] hover:bg-[#2FB8F7]/90 text-white">
-                Começar agora
-                <ArrowRight className="ml-2 h-5 w-5" />
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4"
+              variants={item}
+            >
+              <Button
+                asChild
+                size="lg"
+                className="bg-[#2FB8F7] hover:bg-[#2FB8F7]/90 text-white"
+              >
+                <a href="#/contato">
+                  Começar agora
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
               </Button>
             </motion.div>
 
             {/* Stats */}
-            <motion.div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-8 border-t border-white/20" variants={container}>
+            <motion.div
+              className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-8 border-t border-white/20"
+              variants={container}
+            >
               {[
                 { title: "Custo Zero", desc: "Cartão Standard" },
                 { title: "Segurança Bancária", desc: "Infraestrutura robusta" },
@@ -76,7 +114,7 @@ export function Hero() {
                 { title: "100% de disponibilidade", desc: "Sempre online" },
               ].map((s, i) => (
                 <motion.div key={i} variants={item}>
-                  <div className="text-2xl mb-1">{s.title}</div>
+                  <div className="text-md md:text-2xl mb-1">{s.title}</div>
                   <div className="text-sm text-gray-300">{s.desc}</div>
                 </motion.div>
               ))}
@@ -84,24 +122,14 @@ export function Hero() {
           </motion.div>
 
           {/* Right content - Card mockup */}
-          <motion.div className="relative lg:pl-12" initial="hidden" variants={rightCard} whileInView="show" viewport={{ once: true, amount: 0.4 }}>
-            <Img />
-            <div className="relative">
-              <motion.div
-                initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                viewport={{ once: true }}
-              >
-                <video
-                  autoPlay
-                  muted
-                  playsInline
-                  className="w-full filter drop-shadow-2xl"
-                  src="/credit-card-animation.webm"
-                />
-              </motion.div>
-            </div>
+          <motion.div 
+            className="relative flex items-center justify-center"
+            initial="hidden"
+            variants={rightCard}
+            whileInView="show"
+            viewport={{ once: true, amount: 0.4 }}
+          >
+            <CreditCard />
           </motion.div>
         </div>
       </div>

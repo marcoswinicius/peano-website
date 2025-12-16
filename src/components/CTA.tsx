@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 export function CTA() {
   return (
-    <section className="py-20 lg:py-32 bg-gradient-to-br from-[#44216a] via-[#5f5275] to-[#44216a] text-white relative overflow-hidden">
+    <section className="margin-b border-b border-white py-20 lg:py-32 bg-[#44216a] text-white relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -22,12 +22,16 @@ export function CTA() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-[#2FB8F7] hover:bg-[#2FB8F7]/90 text-white text-lg px-8">
-            Peça seu cartão agora
-            <ArrowRight className="ml-2 h-5 w-5" />
+          <Button asChild size="lg" className="bg-[#2FB8F7] hover:bg-[#2FB8F7]/90 text-white text-lg px-8">
+            <a href="#/contato" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+              Peça seu cartão agora
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
           </Button>
-          <Button size="lg" variant="outline" className="bg-white/10 border-white/20 hover:bg-white/20 text-white text-lg px-8">
-            Agendar demonstração
+          <Button asChild size="lg" variant="outline" className="bg-white/10 border-white/20 hover:bg-white/20 text-white text-lg px-8">
+            <a href="#/contato" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+              Agendar demonstração
+            </a>
           </Button>
         </div>
 
